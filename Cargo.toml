@@ -1,7 +1,7 @@
 [package]
-name = "hdk"
-version = "0.0.1"
-authors = ["Holochain Core Dev Team <devcore@holochain.org>"]
+name = "non-axiomatic-grapher-hdk"
+version = "0.1"
+authors = ["Suraj Jena <jena.suraj.k@gmail.com>"]
 
 [dependencies]
 serde = "1.0"
@@ -9,14 +9,14 @@ serde_derive = "1.0"
 serde_json = { version = "1.0", features = ["preserve_order"] }
 bitflags = "1.0"
 lazy_static = "1.1.0"
-holochain_wasm_utils = { path = "../wasm_utils" }
-holochain_core_types = { path = "../core_types" }
-holochain_core_types_derive = { path = "../core_types_derive" }
+holochain_wasm_utils = { path = "../holochain-rust/wasm_utils" }
+holochain_core_types = { path = "../holochain-rust/core_types" }
+holochain_core_types_derive = { path = "../holochain-rust/core_types_derive" }
 
 [dev-dependencies]
-test_utils = { path = "../test_utils" }
-holochain_container_api = { path = "../container_api" }
-holochain_core = { path = "../core" }
-holochain_core_types = { path = "../core_types" }
+test_utils = { path = "../holochain-rust/test_utils" }
+holochain_container_api = { path = "../holochain-rust/container_api" }
+holochain_core = { path = "../holochain-rust/core" }
+holochain_core_types = { path = "../holochain-rust/core_types" }
 tempfile = "3"
 boolinator = "2.4"

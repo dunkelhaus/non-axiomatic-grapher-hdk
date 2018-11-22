@@ -1,9 +1,6 @@
 # Holochain Development Kit for Non-Axiomatic Semantic Graphing
 ##### Submodule of the `Non-Axiomatic Reasoner` project.
 
-[![Built for Holochain](https://img.shields.io/badge/project-holochain-blue.svg?style=flat-square)](http://holochain.org/)
-[![Chat](https://img.shields.io/badge/chat-chat%2eholochain%2enet-blue.svg?style=flat-square)](https://chat.holochain.net)
-
 ## Overview
 `non-axiomatic-grapher-hdk` is a library for Rust-based holochain dApps that makes it easier to develop Holochain Zomes. With Holochain, Zome functions and validation code are represented as WASM binaries. This library provides bindings for Rust.
 
@@ -31,3 +28,8 @@ Documentation for usage will be available shortly.
 ## Contribute
  - The Non-Axiomatic Reasoner is an open source project. To contribute, contact me via email -> [Suraj Jena](jena.suraj.k@gmail.com).
  - Holochain is also an open source project. To contribute, check out [contributing guidelines](https://github.com/holochain/org/blob/master/CONTRIBUTING.md) for our general practices and protocols on participating in the community.
+
+## Built on (& for)
+
+[![Built for Holochain](https://holochain.org/assets/images/holochain/Holochain_logo.png)](http://holochain.org/)
+[![Chat](https://img.shields.io/badge/chat-chat%2eholochain%2enet-blue.svg?style=flat-square)](https://chat.holochain.net)

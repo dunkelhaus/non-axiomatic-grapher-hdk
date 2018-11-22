@@ -2,7 +2,7 @@
 ##### Submodule of the `Non-Axiomatic Reasoner` project.
 
 ## Overview
-`non-axiomatic-grapher-hdk` is a library for Rust-based holochain dApps that makes it easier to develop Holochain Zomes. With Holochain, Zome functions and validation code are represented as WASM binaries. This library provides bindings for Rust.
+`non-axiomatic-grapher-hdk` is a library for Rust-based holochain dApps that makes it easier to develop Holochain Zomes that want to use Narsese Grammar as an interface to write/read from the source chain, and use the Holochain architecture as a semantic Graph DB. 
 
 This HDK is part of the mother project in the field of AGI - further specs for which can be found here: [Non-Axiomatic Reasoner](https://hackmd.io/c/SyoJjvM0X/%2FpjnXpL-OTq--ctgVEQ-vXQ).
 

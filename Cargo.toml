@@ -1,6 +1,6 @@
 [package]
 name = "non-axiomatic-grapher-hdk"
-version = "0.1"
+version = "0.0.1"
 authors = ["Suraj Jena <jena.suraj.k@gmail.com>"]
 
 [dependencies]

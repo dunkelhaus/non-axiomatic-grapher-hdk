@@ -3,6 +3,102 @@
 //! The EBNF rules for Narsese are translated into macros in this file.
 //! Each macro defines one non-terminal from Appendix A of the book.
 
+/// ## The <judgement> non-terminal.
+/// ### Copulae/Connectors supported here include:
+///
+/// #### Truth Value Designator
+/// - . Truth Value
+///
+#[macro_export]
+macro_rules! judgement
+{
+    (/⇒ $statement:tt . $truthval:tt) =>
+    (
+        println!("Registered {:?} as a statement in future tense with truth value {:?}",
+                stringify!($statement),
+                stringify!($truthval));
+    ); /// Arm 1: Future tense judgement
+
+    (\⇒ $statement:tt . $truthval:tt) =>
+    (
+        println!("Registered {:?} as a statement in past tense with truth value {:?}",
+                stringify!($statement),
+                stringify!($truthval));
+    ); /// Arm 2: Past tense judgement
+
+    (|⇒ $statement:tt . $truthval:tt) =>
+    (
+        println!("Registered {:?} as a statement in present tense with truth value {:?}",
+                stringify!($statement),
+                stringify!($truthval));
+    ); /// Arm 3: Present tense judgement
+
+    ($statement:tt . $truthval:tt) =>
+    (
+        println!("Registered {:?} as a statement with truth value {:?}",
+                stringify!($statement),
+                stringify!($truthval));
+    ); /// Arm 4: No tense judgement
+}
+
+/// ## The <goal> non-terminal.
+/// ### Copulae/Connectors supported here include:
+///
+/// #### Desire Value / Goal Designator
+/// - ! Desire Value
+///
+#[macro_export]
+macro_rules! goal
+{
+    ($statement:tt ! $desireval:tt) =>
+    (
+        println!("Registered {:?} as a goal with desire value {:?}",
+                stringify!($statement),
+                stringify!($truthval));
+    ); /// Arm 1: Base Goal Rule
+}
+
+/// ## The <question> non-terminal.
+/// ### Copulae/Connectors supported here include:
+///
+/// #### Desire Value / Goal Designator
+/// - ? Question (on truth value)
+/// - ¿ Question (on desire value)
+///
+#[macro_export]
+macro_rules! question
+{
+    (/⇒ $statement:tt ?) =>
+    (
+        println!("Registered {:?} as a predictive question",
+                stringify!($statement));
+    ); /// Arm 1: Future tense question
+
+    (\⇒ $statement:tt ?) =>
+    (
+        println!("Registered {:?} as a retrospective question",
+                stringify!($statement));
+    ); /// Arm 2: Past tense question
+
+    (|⇒ $statement:tt ?) =>
+    (
+        println!("Registered {:?} as a current question",
+                stringify!($statement));
+    ); /// Arm 3: Present tense question
+
+    ($statement:tt ?) =>
+    (
+        println!("Registered {:?} as a question",
+                stringify!($statement));
+    ); /// Arm 4: No tense question
+
+    ($statement:tt ¿) =>
+    (
+        println!("Registered {:?} as a question about the desire value",
+                stringify!($statement));
+    ); /// Arm 5: Desire value question
+}
+
 /// ## The <statement> non-terminal.
 /// ### Copulae/Connectors supported here include:
 ///
@@ -265,4 +361,52 @@ macro_rules! term
                 stringify!($($second)*),
                 stringify!($($third)*));
     ); /// Arm 11: Intensional Image Connector
+}
+
+/// ## The <independent_variable> non-terminal.
+/// ### Copulae/Connectors supported here include:
+///
+/// #### Term Prefix
+/// - #
+///
+#[macro_export]
+macro_rules! independent_variable
+{
+    (#$word:tt) =>
+    (
+        println!("Registered {:?} as an independent variable",
+                stringify!($first));
+    ); /// Arm 1: Base independent variable
+}
+
+/// ## The <dependent_variable> non-terminal.
+/// ### Copulae/Connectors supported here include:
+///
+/// #### Term Prefix
+/// - # Variable
+/// - () Independent variable
+///
+#[macro_export]
+macro_rules! dependent_variable
+{
+    (#$word:tt ($var:tt)) =>
+    (
+        println!("Registered {:?} as a dependent variable on {:?}");
+    ); // Arm 1: Base dependent variable
+}
+
+/// ## The <independent_variable> non-terminal.
+/// ### Copulae/Connectors supported here include:
+///
+/// #### Term Prefix
+/// - ? Query variable
+///
+#[macro_export]
+macro_rules! query_variable
+{
+    (#[$word:tt]) =>
+    (
+        println!("Registered {:?} as a query variable",
+                stringify!($first));
+    ); /// Arm 1: Base query variable
 }

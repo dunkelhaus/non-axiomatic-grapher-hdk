@@ -145,21 +145,21 @@ macro_rules! statement
                 stringify!($($second)+)
     ); /// Arm 15: Conjunction Connector
 
-    (∧ $first:tt $($second:tt)+) =>
+    (∨ $first:tt $($second:tt)+) =>
     (
         println!("Registered {:?} is in disjunction with {:?}",
                 stringify!($first),
                 stringify!($($second)+)
     ); /// Arm 16: Disjunction Connector
 
-    (∧ $first:tt $($second:tt)+) =>
+    (, $first:tt $($second:tt)+) =>
     (
         println!("Registered {:?} is in sequential conjunction with {:?}",
                 stringify!($first),
                 stringify!($($second)+)
     ); /// Arm 17: Sequential Conjunction Connector
 
-    (∧ $first:tt $($second:tt)+) =>
+    (; $first:tt $($second:tt)+) =>
     (
         println!("Registered {:?} is in parallel conjunction with {:?}",
                 stringify!($first),
